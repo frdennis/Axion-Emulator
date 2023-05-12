@@ -1,0 +1,33 @@
+data:
+  batch_size: 256
+  feature_columns:
+  - OmegaCDM
+  - logA_s
+  - f_ax
+  - logm_ax
+  - z
+  - k
+  feature_scaler: StandardScaler
+  label_columns:
+  - pfrac
+  label_scaler: StandardScaler
+  num_workers: 25
+  shuffle: true
+  test_data_path: ./data/test.csv
+  train_data_path: ./data/train.csv
+  val_data_path: ./data/val.csv
+model:
+  activation: gelu
+  batch_norm: false
+  dropout: 0.0
+  hidden_dims:
+  - 128
+  - 64
+  learning_rate: 0.01
+  loss: L1Loss
+  type: FullyConnected
+  weight_decay: 5.0e-06
+training:
+  default_root_dir: ./emulators/
+  max_epochs: 1500
+  stochastic_weight_avg: true

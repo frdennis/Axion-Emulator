@@ -1,0 +1,11 @@
+activation: gelu
+dropout: 0.0
+hidden_dims:
+- 128
+- 64
+learning_rate: 0.01
+loss: L1Loss
+n_features: 6
+output_dim: 1
+positive_output: false
+weight_decay: 5.0e-06
