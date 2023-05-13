@@ -1,0 +1,44 @@
+data:
+    #feature_columns: ['Om0', 'sigma8', 'h', 'Ob0', 'ns', 'redshift', 'log10M',]
+    #label_columns: ['conc']
+    #feature_columns: ['axfrac', 'm_ax', 'z', 'k',]
+    feature_columns: ['OmegaCDM', 'logA_s', 'f_ax', 'logm_ax', 'z', 'k',]
+    label_columns: ['pfrac']
+    #batch_size: 65536
+    #batch_size: 32768
+    #batch_size: 16384
+    batch_size: 8192
+
+    #batch_size: 4096
+    #batch_size: 2048
+    #batch_size: 1024
+    #batch_size: 512
+    #batch_size: 256
+    #batch_size: 128
+    num_workers: 25
+    shuffle: true
+    train_data_path: "./data/train.csv"
+    val_data_path: "./data/val.csv"
+    test_data_path: "./data/test.csv"
+    feature_scaler: 'StandardScaler'
+    label_scaler: 'StandardScaler'
+
+model:
+    hidden_dims: [128, 64,]
+    #hidden_dims: [256, 128,]
+    activation: 'gelu'
+    loss: 'L1Loss'
+    dropout: 0.
+    learning_rate: 1.e-2
+    #learning_rate: 1.e-3
+    weight_decay: 5.e-6
+    batch_norm: false
+    type: FullyConnected
+
+training:
+    #gpus: [2]
+    max_epochs: 1500
+    stochastic_weight_avg: true
+    default_root_dir: "./emulators/"
+
+
