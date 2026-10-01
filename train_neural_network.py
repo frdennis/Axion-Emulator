@@ -9,9 +9,9 @@ from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from pytorch_lightning.callbacks import StochasticWeightAveraging, ModelCheckpoint
 import torch.nn as nn
 
-from _data_utils import DataModule
-from _nn_config import DataConfig, ModelConfig, TrainingConfig
-import _models
+from src._data_utils import DataModule
+from src._nn_config import DataConfig, ModelConfig, TrainingConfig
+import src._models
 
 
 # record all info messages
