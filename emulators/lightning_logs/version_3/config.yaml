@@ -1,12 +1,12 @@
 data:
-  batch_size: 1024
+  batch_size: 512
   feature_columns:
-  - OmegaCDM
+  - OmegaDM
   - logA_s
-  - f_ax
+  - logf_ax
   - logm_ax
   - z
-  - k
+  - logk
   feature_scaler: StandardScaler
   label_columns:
   - pfrac
